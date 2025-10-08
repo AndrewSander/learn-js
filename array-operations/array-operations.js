@@ -1,25 +1,14 @@
 export function sum(array) {
-    let soma=0;
-    for(let i=0; i< array.length; i++){
-        soma+=array[i];
-    }
+    const soma = array.reduce((acc,num) => acc + num, 0);
     return soma;
 }
 
 export function product(array) {
-    let multi=1;
-    for(let i=0; i< array.length; i++){
-        multi*=array[i];
-    }
+    const multi= array.reduce((acc,num)=> num*acc,1)
     return multi;
 }
 
 export function sumOdds(array) {
-    let impar=0;
-    for(let i=0; i< array.length; i++){
-        if (array[i] % 2 !== 0){
-            impar+=array[i];
-        }
-    }
+    const impar= array.reduce((acc,num) => acc + ((num % 2 !== 0) ? num : 0),0);
     return impar;
 }
